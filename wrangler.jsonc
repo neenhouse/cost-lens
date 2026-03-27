@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/schemas/config/v2.json",
+  "name": "cost-lens",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-01-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Static assets served from Vite build output
+  "assets": {
+    "directory": "dist",
+    "binding": "ASSETS"
+  },
+
+  // Environment variables
+  "vars": {
+    "ENVIRONMENT": "production"
+  },
+
+  // D1 database for billing data, budgets, and alerts
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cost-lens-db",
+      "database_id": ""
+    }
+  ],
+
+  // R2 bucket for raw billing file uploads
+  "r2_buckets": [
+    {
+      "binding": "UPLOADS",
+      "bucket_name": "cost-lens-uploads"
+    }
+  ],
+
+  // Cron triggers for forecast model & budget alert checks
+  "triggers": {
+    "crons": ["0 6 * * *"]
+  }
+}
