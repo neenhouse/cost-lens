@@ -79,6 +79,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <a href="#main-content" className="skip-to-content">Skip to content</a>
       <div className="app-layout">
         <Sidebar
           open={sidebarOpen}
@@ -99,7 +100,7 @@ export default function App() {
           </button>
         </div>
 
-        <main className="app-main">
+        <main id="main-content" className="app-main">
           <Suspense fallback={<div className="loading">Loading...</div>}>
             <Routes>
               <Route path="/" element={<LandingPage />} />
