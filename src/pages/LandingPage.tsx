@@ -44,7 +44,10 @@ export default function LandingPage() {
       <section className="hero">
         <div className="hero-og-lens" aria-hidden="true">
           <div className="hero-og-lens-glass">
-            <img src="/hero-og.webp" alt="" loading="eager" />
+            <video autoPlay muted loop playsInline poster="/hero-og.webp" style={{width:'100%',height:'100%',objectFit:'cover'}}>
+              <source src="/hero-og.webm" type="video/webm" />
+              <source src="/hero-og.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
         <div className="hero-badge">Cloud Cost Intelligence</div>
