@@ -2,37 +2,37 @@ import { Link } from "react-router-dom";
 
 const features = [
   {
-    icon: "^",
+    icon: "↑",
     title: "Billing Data Upload",
     desc: "Paste CSV or use sample AWS/GCP data. Parsed instantly in your browser.",
   },
   {
-    icon: "!",
+    icon: "⚠",
     title: "Waste Detection",
     desc: "Find idle EC2 instances, unused EBS volumes, oversized RDS, and more.",
   },
   {
-    icon: "$",
+    icon: "◈",
     title: "Optimization Recommendations",
     desc: "Prioritized actions with dollar savings, effort level, and confidence scores.",
   },
   {
-    icon: "%",
+    icon: "◎",
     title: "Team Cost Attribution",
     desc: "Pie charts and tables breaking down cost by team and service.",
   },
   {
-    icon: "R",
+    icon: "↻",
     title: "Reserved Instance Planner",
     desc: "Compare on-demand vs reserved vs spot. Break-even analysis included.",
   },
   {
-    icon: "~",
+    icon: "∿",
     title: "Monthly Forecast",
     desc: "Line chart projecting next 6 months with confidence intervals.",
   },
   {
-    icon: "#",
+    icon: "◐",
     title: "Budget Alerts",
     desc: "Set thresholds, track burn rate, see which teams are over budget.",
   },

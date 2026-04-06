@@ -12,13 +12,13 @@ const ForecastPage = lazy(() => import("./pages/ForecastPage"));
 const BudgetsPage = lazy(() => import("./pages/BudgetsPage"));
 
 const NAV_ITEMS = [
-  { to: "/dashboard", icon: "//", label: "Dashboard" },
-  { to: "/waste", icon: "!!", label: "Waste" },
-  { to: "/recommendations", icon: "$$", label: "Savings" },
-  { to: "/teams", icon: "%%", label: "Teams" },
-  { to: "/ri-planner", icon: "RI", label: "RI Planner" },
-  { to: "/forecast", icon: "~~", label: "Forecast" },
-  { to: "/budgets", icon: "##", label: "Budgets" },
+  { to: "/dashboard", icon: "⊞", label: "Dashboard" },
+  { to: "/waste", icon: "⚠", label: "Waste" },
+  { to: "/recommendations", icon: "◈", label: "Savings" },
+  { to: "/teams", icon: "◎", label: "Teams" },
+  { to: "/ri-planner", icon: "↻", label: "RI Planner" },
+  { to: "/forecast", icon: "∿", label: "Forecast" },
+  { to: "/budgets", icon: "◐", label: "Budgets" },
 ];
 
 function Sidebar({
