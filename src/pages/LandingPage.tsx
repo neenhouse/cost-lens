@@ -42,6 +42,11 @@ export default function LandingPage() {
   return (
     <main className="landing">
       <section className="hero">
+        <div className="hero-og-lens" aria-hidden="true">
+          <div className="hero-og-lens-glass">
+            <img src="/hero-og.webp" alt="" loading="eager" />
+          </div>
+        </div>
         <div className="hero-badge">Cloud Cost Intelligence</div>
         <h1>
           Stop overpaying<br />for cloud.

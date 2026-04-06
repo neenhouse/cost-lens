@@ -730,6 +730,64 @@ input:focus-visible {
   padding: var(--space-3xl) var(--space-xl);
 }
 
+/* ---- Hero OG — magnifying glass masked reveal ---- */
+.hero-og-lens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  pointer-events: none;
+}
+
+.hero-og-lens-glass {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 6px rgba(16, 185, 129, 0.25),
+    0 0 0 10px rgba(16, 185, 129, 0.08),
+    0 8px 48px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(16, 185, 129, 0.18);
+  animation: lensReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Lens handle — a thin rect protruding bottom-right */
+.hero-og-lens-glass::after {
+  content: '';
+  position: absolute;
+  bottom: -28px;
+  right: 28px;
+  width: 14px;
+  height: 42px;
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.5) 0%, rgba(16, 185, 129, 0.15) 100%);
+  border-radius: 4px;
+  transform: rotate(40deg);
+  transform-origin: top center;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.hero-og-lens-glass img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(1.4) brightness(0.85) contrast(1.05);
+}
+
+@keyframes lensReveal {
+  from {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
+  }
+  to {
+    clip-path: circle(50% at 50% 50%);
+    opacity: 1;
+  }
+}
+
 .hero {
   text-align: center;
   margin-bottom: var(--space-3xl);
