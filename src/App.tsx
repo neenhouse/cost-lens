@@ -1,5 +1,6 @@
 import { lazy, Suspense, useState } from "react";
 import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 const UploadPage = lazy(() => import("./pages/UploadPage"));
@@ -10,6 +11,7 @@ const TeamsPage = lazy(() => import("./pages/TeamsPage"));
 const RIPage = lazy(() => import("./pages/RIPage"));
 const ForecastPage = lazy(() => import("./pages/ForecastPage"));
 const BudgetsPage = lazy(() => import("./pages/BudgetsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const NAV_ITEMS = [
   { to: "/dashboard", icon: "⊞", label: "Dashboard" },
@@ -78,6 +80,7 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
+    <ErrorBoundary>
     <BrowserRouter>
       <a href="#main-content" className="skip-to-content">Skip to content</a>
       <div className="app-layout">
@@ -112,10 +115,12 @@ export default function App() {
               <Route path="/ri-planner" element={<RIPage />} />
               <Route path="/forecast" element={<ForecastPage />} />
               <Route path="/budgets" element={<BudgetsPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </main>
       </div>
     </BrowserRouter>
+    </ErrorBoundary>
   );
 }
