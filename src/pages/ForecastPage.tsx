@@ -42,6 +42,12 @@ export default function ForecastPage() {
     0
   );
 
+  const projectedMonths = MOCK_FORECAST.slice(historicalCount);
+  const projectedRange =
+    projectedMonths.length >= 2
+      ? `${formatMonth(projectedMonths[0].month + "-01")} – ${formatMonth(projectedMonths[projectedMonths.length - 1].month + "-01")}`
+      : "";
+
   return (
     <main className="page-container">
       <div className="page-header">
@@ -65,7 +71,7 @@ export default function ForecastPage() {
         <div className="summary-card">
           <span className="summary-label">6-Month Projected Total</span>
           <span className="summary-value">{formatUsd(sixMonthProjected)}</span>
-          <span className="summary-sub">Apr-Sep 2026</span>
+          <span className="summary-sub">{projectedRange}</span>
         </div>
         <div className="summary-card">
           <span className="summary-label">Confidence Range (Next Mo)</span>
